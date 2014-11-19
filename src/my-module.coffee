@@ -1,4 +1,6 @@
-class ModuleA
+window.Namespace = {}
+
+class MyModule
 
   constructor: (name) ->
     @setName name
@@ -10,4 +12,4 @@ class ModuleA
   getName: ->
     @name
 
-window.Namespace.ModuleA = ModuleA
+window.Namespace.MyModule = MyModule

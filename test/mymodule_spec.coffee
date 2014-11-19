@@ -1,21 +1,22 @@
-describe 'module a', ->
+describe 'my module', ->
 
   beforeEach ->
-    @moduleA = new global.Namespace.ModuleA 'Beer'
+    {MyModule} = global.Namespace
+    @myModule = new MyModule 'Beer'
 
   describe 'instantiation', ->
 
     it 'instantiates with a name', ->
-      expect(@moduleA.name).to.equal 'Beer'
+      expect(@myModule.name).to.equal 'Beer'
 
   describe 'setting a new name', ->
 
     it 'can set a new name', ->
-      @moduleA.setName 'Wine'
-      expect(@moduleA.name).to.equal 'Wine'
+      @myModule.setName 'Wine'
+      expect(@myModule.name).to.equal 'Wine'
 
   describe 'getting the name', ->
 
     it 'can tell you its name', ->
-      moduleName = @moduleA.getName()
+      moduleName = @myModule.getName()
       expect(moduleName).to.equal 'Beer'
