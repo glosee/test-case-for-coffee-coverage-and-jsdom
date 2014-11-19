@@ -2,11 +2,16 @@
 
 This is as simple as I could get for a test environment to reproduce an issue with trying to use `coffee-coverage` and `jsdom` to test client-side code that is not built with `browserify` and cannot be `require`d. This has been raised in the `coffee-coverage` repository as [issue 23](https://github.com/benbria/coffee-coverage/issues/23).
 
-This test project contains a `gulp` task that does not
+This test project contains two `gulp` tasks: one that does and one that does not produce coverage results when running unit tests with `mocha`.
 
 ## How to use
 
-Simply run `$ npm install` then `$ gulp test` or `$ gulp test-with-coverage`.
+Clone the repo and run `$ npm install`. Run `$ gulp test` and open `coverage-results/coverage.html` in your browser to see 0 for every line. Run `$ gulp test-with-coverage` and open `coverage-results/coverage.html` in your browser to see %100 coverage. The trick is what's on line 30 of `test/spec_init.coffee`...
+
+```coffeescript
+global._$jscoverage = window._$jscoverage
+```
+
 
 ## About
 
