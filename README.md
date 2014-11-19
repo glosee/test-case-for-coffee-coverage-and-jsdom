@@ -2,6 +2,8 @@
 
 This is as simple as I could get for a test environment to reproduce an issue with trying to use `coffee-coverage` and `jsdom` to test client-side code that is not built with `browserify` and cannot be `require`d. This has been raised in the `coffee-coverage` repository as [issue 23](https://github.com/benbria/coffee-coverage/issues/23).
 
+This test project contains a `gulp` task that does not
+
 ## How to use
 
 Simply run `$ npm install` then `$ gulp test` or `$ gulp test-with-coverage`.
@@ -16,7 +18,7 @@ The directory structure is simple enough, with `src/` and `test/` being the only
 
 ### Gulp tasks
 
-There are only two main tasks: `test[-with-coverage]` and `coffee-coverage`. These are both shell commands that are ran by `gulp` for convenience. If you want to edit the terminal command to change arguments, look at `gulpfile.coffee` and you'll see the variables `specReporter` and `htmlCovReporter` contain the mocha commands in an array for easy reading and editing, like so:
+There are two main tasks: `test[-with-coverage]` and `coffee-coverage`. These are both shell commands that are run by `gulp` for convenience. If you want to edit the terminal command to change arguments, look at `gulpfile.coffee` and you'll see the variables `specReporter` and `htmlCovReporter` contain the mocha commands in an array for easy reading and editing, like so:
 
 ```coffeescript
 htmlCovReporter = [

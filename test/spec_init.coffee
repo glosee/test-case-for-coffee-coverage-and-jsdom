@@ -27,7 +27,6 @@ before (next) ->
       # Ensure coverage is written to the `global` version of `_$jscoverage`,
       # which was instantiated when mocha required `init.js`, but only when
       # $COVERAGE is true.
-      console.log "COVERAGE: " + process.env['COVERAGE']
       if process.env['COVERAGE'] then global._$jscoverage = window._$jscoverage
 
       next()
