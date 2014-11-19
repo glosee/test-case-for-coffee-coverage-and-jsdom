@@ -29,8 +29,8 @@ gulp.task('test', ['coffee-coverage'],
   shell.task [specReporter, htmlCovReporter])
 
 # Run the mocha test suite and receive output as expected
-gulp.task 'test-with-coverage', ['turn-on-coverage', 'coffee-coverage'], ->
-  gulp.run(shell.task [specReporter, htmlCovReporter])
+gulp.task('test-with-coverage', ['turn-on-coverage', 'coffee-coverage'],
+  shell.task [specReporter, htmlCovReporter])
 
 coverageCmd = [
   'coffeeCoverage'
